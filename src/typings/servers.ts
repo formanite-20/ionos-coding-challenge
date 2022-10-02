@@ -22,4 +22,8 @@ export interface IServerInfo<CreatedType> {
 export interface IServersResponse {
   data: IServerInfo<string>[];
   totalCount: number;
+  statusCode: number;
 }
+
+export type SortByType = "uptime" | "status" | "created" ;
+export type SortingOrderType = "ascend" | "descend";

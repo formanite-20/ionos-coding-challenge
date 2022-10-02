@@ -1,7 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 
+import serversReducer from "./redux/serversSlice";
+
 export const store = configureStore({
-  reducer: {}
+  reducer: {
+    servers: serversReducer,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
