@@ -32,7 +32,7 @@ export const ServerList = () => {
   ];
   const initialDatasource: IServerInfo<number>[] = [];
   if (list)
-    list.forEach((server) => {
+    list.forEach((server: IServerInfo<string>) => {
       const createdDate = new Date(server.created);
       initialDatasource.push({
         ...server,
