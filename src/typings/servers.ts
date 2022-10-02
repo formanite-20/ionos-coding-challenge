@@ -19,7 +19,7 @@ export interface IServerInfo<CreatedType> {
   stats: IStats;
 }
 
-export interface IServersRespose {
+export interface IServersResponse {
   data: IServerInfo<string>[];
   totalCount: number;
 }
