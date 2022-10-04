@@ -20,6 +20,11 @@ export const ServerList = () => {
     list,
     loading,
   } = useAppSelector((state) => state.servers);
+
+  useEffect(() => {
+    (!loading && list?.length === 0) && dispatch(ServersAsyncActions.List());
+  }, [loading, dispatch, list]);
+
   let [searchParams,] = useSearchParams();
   const sortBy = searchParams.get("sortBy");
   const order = searchParams.get("order");

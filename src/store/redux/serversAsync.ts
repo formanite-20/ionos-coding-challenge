@@ -9,6 +9,9 @@ const List = createAsyncThunk<IServersResponse, void, ThunkAPIConfig>(
   async (_, { rejectWithValue }) => {
     try {
       const serversResult = await ServersList();
+      if(serversResult.data.statusCode === 501) {
+        return rejectWithValue({ message: "Error While trying to fetch ServersList!" });
+      }
       return serversResult.data;
     } catch (error) {
       return rejectWithValue({ message: "Error While trying to fetch ServersList!" });
